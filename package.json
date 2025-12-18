@@ -1,4 +1,4 @@
-{
+﻿{
     "name":  "todo-app",
     "private":  true,
     "version":  "0.0.0",
@@ -6,7 +6,7 @@
     "homepage":  "https://apolloat2022.github.io/todo-app",
     "scripts":  {
                     "dev":  "vite",
-                    "build":  "npx vite build",
+                    "build":  "vite build",
                     "lint":  "eslint .",
                     "preview":  "vite preview",
                     "predeploy":  "npm run build",
