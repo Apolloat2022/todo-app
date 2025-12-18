@@ -1,0 +1,131 @@
+/* src/styles/enhanced.css */
+/* Modern styles for Todo App */
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    --warning-gradient: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    --danger-gradient: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+.enhanced-card {
+    border: none;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.enhanced-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.stat-card small {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.priority-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.priority-high {
+    background: var(--danger-gradient);
+    color: white;
+}
+
+.priority-medium {
+    background: var(--warning-gradient);
+    color: white;
+}
+
+.priority-low {
+    background: var(--success-gradient);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.completed-todo {
+    opacity: 0.7;
+    text-decoration: line-through;
+    background-color: #f8f9fa;
+}
+
+.action-button {
+    transition: all 0.2s ease;
+}
+
+.action-button:hover {
+    transform: scale(1.05);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .enhanced-card {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .stat-card {
+        background: #4a5568;
+    }
+    
+    .stat-card h3 {
+        color: #e2e8f0;
+    }
+    
+    .completed-todo {
+        background-color: #4a5568;
+    }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .todo-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .todo-actions button {
+        width: 100%;
+    }
+    
+    .stat-card {
+        margin-bottom: 10px;
+    }
+}

@@ -37,24 +37,24 @@ function App() {
             <Container className="mt-4">
                 <Card className="shadow-lg">
                     <Card.Header className="bg-primary text-white py-3">
-                        <div className="d-flex align-items-center justify-content-center" style={{ backgroundColor: "#e6f2ff", padding: "20px", borderRadius: "10px", marginBottom: "10px" }}>
+                        <div className="d-flex align-items-center justify-content-center">
                             {/* Large Logo */}
                             <img
                                 src={logo}
                                 alt="Apollo Technologies Logo"
                                 className="me-3"
                                 style={{
-                                    height: '200px',
+                                    height: '100px',
                                     width: 'auto',
                                     objectFit: 'contain'
                                 }}
                             />
                             {/* App Title - Compact */}
                             <div className="text-center">
-                                <h1 className="mb-0" style={{ color: "#0066cc", fontSize: "2.2rem", fontWeight: "bold" }}>
+                                <h1 className="mb-0" style={{ fontSize: '2.2rem' }}>
                                     Apollo Todo App
                                 </h1>
-                                <p className="mb-0" style={{ color: "#0066cc", fontSize: "1rem", opacity: 1, fontWeight: "600" }}>
+                                <p className="mb-0" style={{ fontSize: '1rem', opacity: 0.9 }}>
                                     Enhanced with statistics & export
                                 </p>
                             </div>
@@ -163,7 +163,7 @@ function App() {
                         <div className="text-center mt-4 text-muted">
                             <small>
                                 Enhanced Todo App • Todos persist on refresh • Export functionality • Priority system
-                            <br />Built by Apollo Technologies US</small>
+                            </small>
                         </div>
                     </Card.Body>
                 </Card>
@@ -173,9 +173,4 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
 
