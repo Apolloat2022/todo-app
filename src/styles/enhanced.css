@@ -1,53 +1,129 @@
 /* src/styles/enhanced.css */
-/* Modern styles for Todo App */
+/* Modern Cinematic Styles for Todo App */
 
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     --warning-gradient: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
     --danger-gradient: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    --dark-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --cinematic-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-.enhanced-card {
-    border: none;
-    border-radius: 12px;
+/* Global Modern Styles */
+.modern-app {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.shadow-cinematic {
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.1),
+        0 2px 15px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 18px !important;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.shadow-cinematic:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.15),
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Cards */
+.form-card {
     background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
-.enhanced-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+.form-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
-.stat-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border: none;
+.input-group-modern .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    background-color: white;
+}
+
+/* Action Buttons */
+.action-button-modern {
     border-radius: 10px;
-    padding: 15px;
+    border-width: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-button-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+.action-button-modern:active {
+    transform: translateY(0);
+}
+
+/* Enhanced Stat Cards */
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--primary-gradient);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .stat-card h3 {
     margin: 0;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #2d3748;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
 }
 
 .stat-card small {
-    color: #718096;
+    color: #64748b;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
+/* Priority Badges - Modern */
 .priority-badge {
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .priority-high {
@@ -57,7 +133,7 @@
 
 .priority-medium {
     background: var(--warning-gradient);
-    color: white;
+    color: #1f2937;
 }
 
 .priority-low {
@@ -65,67 +141,143 @@
     color: white;
 }
 
+/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
 }
 
 .todo-item {
-    animation: fadeIn 0.3s ease-out;
+    animation: fadeIn 0.4s ease-out;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 4px solid #e2e8f0;
+    transition: all 0.3s ease;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+.todo-item:hover {
+    background-color: #f8fafc;
+    border-left-color: #667eea;
+    transform: translateX(5px);
 }
 
 .completed-todo {
-    opacity: 0.7;
-    text-decoration: line-through;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    opacity: 0.8;
+    border-left-color: #10b981 !important;
 }
 
-.action-button {
-    transition: all 0.2s ease;
+.empty-state {
+    animation: fadeIn 0.6s ease-out;
 }
 
-.action-button:hover {
-    transform: scale(1.05);
+.empty-icon {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
 }
 
-/* Dark mode support */
+/* Progress Animation */
+.progress-bar-modern {
+    height: 8px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Dark Mode Enhancements */
 @media (prefers-color-scheme: dark) {
-    .enhanced-card {
-        background: #2d3748;
-        color: #e2e8f0;
+    .modern-app {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
     
-    .stat-card {
-        background: #4a5568;
+    .form-card,
+    .stat-card,
+    .shadow-cinematic {
+        background: #1e293b;
+        color: #e2e8f0;
+        border-color: #334155;
     }
     
-    .stat-card h3 {
-        color: #e2e8f0;
+    .todo-item {
+        background-color: #334155;
+        border-left-color: #475569;
+    }
+    
+    .todo-item:hover {
+        background-color: #475569;
+        border-left-color: #60a5fa;
     }
     
     .completed-todo {
-        background-color: #4a5568;
+        background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    }
+    
+    .input-group-modern .form-control {
+        background-color: #334155;
+        color: #e2e8f0;
+        border-color: #475569;
     }
 }
 
-/* Responsive improvements */
+/* Responsive Design */
 @media (max-width: 768px) {
+    .shadow-cinematic {
+        border-radius: 12px !important;
+    }
+    
+    .stat-card {
+        margin-bottom: 15px;
+    }
+    
+    .action-button-modern {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
     .todo-actions {
         flex-direction: column;
         gap: 10px;
     }
-    
-    .todo-actions button {
-        width: 100%;
-    }
-    
-    .stat-card {
-        margin-bottom: 10px;
-    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
