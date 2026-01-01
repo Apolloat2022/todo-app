@@ -1,4 +1,4 @@
-// src/App.jsx - LARGER LOGO, COMPACT HEADER
+// src/App.jsx - BRANDING REMOVED, COMPACT HEADER
 import React from 'react';
 import TodoList from './components/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,30 +6,21 @@ import './App.css';
 import './styles/todoStyles.css';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
-import logo from './assets/logo.png';
+// Import for 'logo' has been REMOVED as the image is no longer used
+// import logo from './assets/logo.png';
 
 function App() {
   return (
     <div className="App">
-      <Container className="mt-4"> {/* Reduced top margin */}
+      <Container className="mt-4">
         <Card className="shadow-lg">
-          <Card.Header className="bg-primary text-white py-3"> {/* Reduced vertical padding */}
+          <Card.Header className="bg-primary text-white py-3">
             <div className="d-flex align-items-center justify-content-center">
-              {/* Large Logo */}
-              <img 
-                src={logo} 
-                alt="Apollo Technologies Logo" 
-                className="me-3"
-                style={{ 
-                  height: '70px',  // Increased logo size
-                  width: 'auto',
-                  objectFit: 'contain'
-                }}
-              />
-              {/* App Title - Compact */}
+              {/* LOGO SECTION REMOVED - The entire <img> tag is gone. */}
+              {/* App Title - Modified */}
               <div className="text-center">
-                <h1 className="h3 mb-1">📝 Apollo Todo</h1> {/* Smaller heading */}
-                <p className="small mb-0">Click tasks to mark complete</p> {/* Smaller text */}
+                <h1 className="h3 mb-1">📝 My Todo App</h1> {/* "Apollo Todo" changed to "My Todo App" */}
+                <p className="small mb-0">Click tasks to mark complete</p>
               </div>
             </div>
           </Card.Header>
@@ -38,10 +29,10 @@ function App() {
             <TodoList />
           </Card.Body>
           
-          <Card.Footer className="text-muted text-center py-2"> {/* Compact footer */}
+          <Card.Footer className="text-muted text-center py-2">
+            {/* FOOTER BRANDING REMOVED - Entire <small> block replaced. */}
             <small className="fs-6">
-              Built by <strong>Apollo Technologies US</strong> • 
-              AI-assisted development
+              Your productive daily companion
             </small>
           </Card.Footer>
         </Card>
