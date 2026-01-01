@@ -1,4 +1,4 @@
-// src/App.jsx - Enhanced version (BRANDING REMOVED)
+// src/App.jsx - Enhanced version (Updated Header & Footer)
 import React, { useState } from 'react';
 import TodoList from './components/TodoList';
 import TodoStats from './components/TodoStats';
@@ -16,7 +16,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FiPlus, FiTrash2, FiDownload } from 'react-icons/fi';
-// 1. LOGO IMPORT REMOVED
+// Logo import removed
 
 function App() {
     const { todos, addTodo, toggleTodo, deleteTodo, clearCompleted } = useTodos();
@@ -37,13 +37,12 @@ function App() {
             <Container className="mt-4">
                 <Card className="shadow-lg">
                     <Card.Header className="bg-primary text-white py-3">
-                        {/* 2. LOGO & BLUE BACKGROUND CONTAINER REMOVED */}
+                        {/* Header with White Text */}
                         <div className="text-center">
-                            {/* 3. APP TITLE CHANGED */}
-                            <h1 className="mb-0" style={{ color: "#0066cc", fontSize: "2.2rem", fontWeight: "bold" }}>
-                                📝 My Enhanced Todo App
+                            <h1 className="mb-0" style={{ color: "#ffffff", fontSize: "2.2rem", fontWeight: "bold" }}>
+                                📝 My Todo App
                             </h1>
-                            <p className="mb-0" style={{ color: "#0066cc", fontSize: "1rem", opacity: 1, fontWeight: "600" }}>
+                            <p className="mb-0" style={{ color: "#ffffff", fontSize: "1rem", opacity: 1, fontWeight: "600" }}>
                                 Manage tasks with stats, priority & export
                             </p>
                         </div>
@@ -147,10 +146,10 @@ function App() {
                             </Card.Body>
                         </Card>
                         
-                        {/* 4. FOOTER BRANDING REMOVED & REPLACED */}
+                        {/* Updated Footer */}
                         <div className="text-center mt-4 text-muted">
                             <small>
-                                Your todos are saved locally • CSV Export • Priority System
+                                Built by Apollo Technologies US Inc.
                             </small>
                         </div>
                     </Card.Body>
