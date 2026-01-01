@@ -1,4 +1,4 @@
-// src/App.jsx - Enhanced version with new features
+// src/App.jsx - Enhanced version (BRANDING REMOVED)
 import React, { useState } from 'react';
 import TodoList from './components/TodoList';
 import TodoStats from './components/TodoStats';
@@ -16,7 +16,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FiPlus, FiTrash2, FiDownload } from 'react-icons/fi';
-import logo from './assets/logo.png';
+// 1. LOGO IMPORT REMOVED
 
 function App() {
     const { todos, addTodo, toggleTodo, deleteTodo, clearCompleted } = useTodos();
@@ -37,27 +37,15 @@ function App() {
             <Container className="mt-4">
                 <Card className="shadow-lg">
                     <Card.Header className="bg-primary text-white py-3">
-                        <div className="d-flex align-items-center justify-content-center" style={{ backgroundColor: "#e6f2ff", padding: "20px", borderRadius: "10px", marginBottom: "10px" }}>
-                            {/* Large Logo */}
-                            <img
-                                src={logo}
-                                alt="Apollo Technologies Logo"
-                                className="me-3"
-                                style={{
-                                    height: '200px',
-                                    width: 'auto',
-                                    objectFit: 'contain'
-                                }}
-                            />
-                            {/* App Title - Compact */}
-                            <div className="text-center">
-                                <h1 className="mb-0" style={{ color: "#0066cc", fontSize: "2.2rem", fontWeight: "bold" }}>
-                                    Apollo Todo App
-                                </h1>
-                                <p className="mb-0" style={{ color: "#0066cc", fontSize: "1rem", opacity: 1, fontWeight: "600" }}>
-                                    Enhanced with statistics & export
-                                </p>
-                            </div>
+                        {/* 2. LOGO & BLUE BACKGROUND CONTAINER REMOVED */}
+                        <div className="text-center">
+                            {/* 3. APP TITLE CHANGED */}
+                            <h1 className="mb-0" style={{ color: "#0066cc", fontSize: "2.2rem", fontWeight: "bold" }}>
+                                📝 My Enhanced Todo App
+                            </h1>
+                            <p className="mb-0" style={{ color: "#0066cc", fontSize: "1rem", opacity: 1, fontWeight: "600" }}>
+                                Manage tasks with stats, priority & export
+                            </p>
                         </div>
                     </Card.Header>
                     
@@ -159,11 +147,11 @@ function App() {
                             </Card.Body>
                         </Card>
                         
-                        {/* Footer */}
+                        {/* 4. FOOTER BRANDING REMOVED & REPLACED */}
                         <div className="text-center mt-4 text-muted">
                             <small>
-                                Enhanced Todo App • Todos persist on refresh • Export functionality • Priority system
-                            <br />Built by Apollo Technologies US</small>
+                                Your todos are saved locally • CSV Export • Priority System
+                            </small>
                         </div>
                     </Card.Body>
                 </Card>
@@ -173,9 +161,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
